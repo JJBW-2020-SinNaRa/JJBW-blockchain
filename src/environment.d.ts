@@ -10,5 +10,6 @@ declare module NodeJS {
     CONTRACT_ADDRESS: string;
     PRI_KEY: string;
     API_ENDPOINT: string;
+    GAS_LIMIT: string;
   }
 }
