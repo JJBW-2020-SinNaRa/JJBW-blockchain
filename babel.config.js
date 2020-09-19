@@ -38,7 +38,5 @@ module.exports = {
   ],
   plugins: [
     ["module-resolver", aliasOption],
-    ["@babel/plugin-proposal-decorators", decoratorsOption],
-    ["@babel/plugin-proposal-class-properties", classPropertiesOption],
   ],
 };
