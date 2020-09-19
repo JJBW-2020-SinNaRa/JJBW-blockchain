@@ -6,7 +6,9 @@ declare module NodeJS {
     KAS_ID: string;
     KAS_SECRET: string;
     KAS_URL: string;
-    KAS_CHAIN: 1001 | 8217;
+    NETWORK_ID: 1001 | 8217;
     CONTRACT_ADDRESS: string;
+    PRI_KEY: string;
+    API_ENDPOINT: string;
   }
 }
