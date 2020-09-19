@@ -11,6 +11,7 @@ export const contextHandler = async ({
   res,
 }: IntegrationContext): Promise<ApolloContext> => {
   return {
-
+    req,
+    res
   };
 };
