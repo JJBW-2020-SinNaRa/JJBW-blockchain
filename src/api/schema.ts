@@ -6,16 +6,19 @@ import {
   resolvers,
 } from "graphql-scalars";
 import {
-  RootSchema
+  RootSchema,
+  BlockChainSchema
 } from "./graphql";
 
 export const schema = makeExecutableSchema({
   typeDefs: [
     ...typeDefs,
-    RootSchema.typeDefs
+    RootSchema.typeDefs,
+    BlockChainSchema.typeDefs
   ],
   resolvers: [
     resolvers,
-    RootSchema.resolver
+    RootSchema.resolver,
+    BlockChainSchema.resolver
   ],
 });
