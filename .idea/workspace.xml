@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0149317d-757b-4393-892c-68d90556af66" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environment.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/environment.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,12 +31,8 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="temp" />
-                    <option name="lastUsedInstant" value="1600501496" />
-                  </RecentBranch>
-                  <RecentBranch>
                     <option name="branchName" value="master" />
-                    <option name="lastUsedInstant" value="1600501495" />
+                    <option name="lastUsedInstant" value="1600517448" />
                   </RecentBranch>
                 </list>
               </option>
@@ -45,6 +43,9 @@
       </RecentBranches>
     </option>
   </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
   <component name="ProjectId" id="1hieHvTCSmanSyfDBb3VvmGXAB4" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -54,6 +55,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -78,12 +80,13 @@
       <scripts>
         <script value="dev" />
       </scripts>
-      <node-interpreter value="project" />
+      <node-interpreter value="$USER_HOME$/.nvm/versions/node/v10.22.1/bin/node" />
       <envs />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.dev" />
         <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
@@ -108,21 +111,21 @@
       <screen x="-1440" y="-998" width="1440" height="2560" />
     </state>
     <state x="-982" y="36" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1200/-1440.-998.1440.2560@-1440.-998.1440.2560" timestamp="1600501678382" />
-    <state width="1419" height="793" key="GridCell.Tab.0.bottom" timestamp="1600498785524">
+    <state width="1419" height="308" key="GridCell.Tab.0.bottom" timestamp="1600523652589">
       <screen x="-1440" y="-998" width="1440" height="2560" />
     </state>
-    <state width="1419" height="793" key="GridCell.Tab.0.bottom/0.0.1920.1200/-1440.-998.1440.2560@-1440.-998.1440.2560" timestamp="1600498785524" />
-    <state width="1419" height="793" key="GridCell.Tab.0.center" timestamp="1600498785522">
+    <state width="1419" height="308" key="GridCell.Tab.0.bottom/0.0.1920.1200/-1440.-998.1440.2560@-1440.-998.1440.2560" timestamp="1600523652589" />
+    <state width="1419" height="308" key="GridCell.Tab.0.center" timestamp="1600523652587">
       <screen x="-1440" y="-998" width="1440" height="2560" />
     </state>
-    <state width="1419" height="793" key="GridCell.Tab.0.center/0.0.1920.1200/-1440.-998.1440.2560@-1440.-998.1440.2560" timestamp="1600498785522" />
-    <state width="1419" height="793" key="GridCell.Tab.0.left" timestamp="1600498785521">
+    <state width="1419" height="308" key="GridCell.Tab.0.center/0.0.1920.1200/-1440.-998.1440.2560@-1440.-998.1440.2560" timestamp="1600523652587" />
+    <state width="1419" height="308" key="GridCell.Tab.0.left" timestamp="1600523652586">
       <screen x="-1440" y="-998" width="1440" height="2560" />
     </state>
-    <state width="1419" height="793" key="GridCell.Tab.0.left/0.0.1920.1200/-1440.-998.1440.2560@-1440.-998.1440.2560" timestamp="1600498785521" />
-    <state width="1419" height="793" key="GridCell.Tab.0.right" timestamp="1600498785523">
+    <state width="1419" height="308" key="GridCell.Tab.0.left/0.0.1920.1200/-1440.-998.1440.2560@-1440.-998.1440.2560" timestamp="1600523652586" />
+    <state width="1419" height="308" key="GridCell.Tab.0.right" timestamp="1600523652588">
       <screen x="-1440" y="-998" width="1440" height="2560" />
     </state>
-    <state width="1419" height="793" key="GridCell.Tab.0.right/0.0.1920.1200/-1440.-998.1440.2560@-1440.-998.1440.2560" timestamp="1600498785523" />
+    <state width="1419" height="308" key="GridCell.Tab.0.right/0.0.1920.1200/-1440.-998.1440.2560@-1440.-998.1440.2560" timestamp="1600523652588" />
   </component>
 </project>
