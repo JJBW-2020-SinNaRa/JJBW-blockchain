@@ -1,0 +1,16 @@
+{
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "exec": "babel-node --extensions '.ts'",
+  "ext": "ts",
+  "ignore": [
+    "*.test.ts"
+  ],
+  "inspect": true,
+  "verbose": true,
+  "watch": [
+    "src"
+  ],
+  "delay": 2500
+}

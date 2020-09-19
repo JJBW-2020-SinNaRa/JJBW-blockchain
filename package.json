@@ -1,0 +1,49 @@
+{
+  "name": "jjbw-blockchain",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "dependencies": {
+    "apollo-server-express": "^2.17.0",
+    "axios": "^0.20.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "graphql-scalars": "^1.2.7"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-typescript": "^7.10.4",
+    "@types/body-parser": "^1.19.0",
+    "@types/cookie-parser": "^1.4.2",
+    "@types/cors": "^2.8.7",
+    "@types/express": "^4.17.8",
+    "@types/node": "^14.10.1",
+    "@typescript-eslint/eslint-plugin": "^4.1.0",
+    "@typescript-eslint/parser": "^4.1.0",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "env-cmd": "^10.1.0",
+    "eslint": "^7.9.0",
+    "nodemon": "^2.0.4",
+    "typescript": "^4.0.2"
+  },
+  "scripts": {
+    "build": "babel src --out-dir build --extensions '.ts'",
+    "dev": "env-cmd nodemon src/server.ts",
+    "start": "npm run build && env-cmd node ./build/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JJBW-2020-SinNaRa/JJBW-blockchain.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JJBW-2020-SinNaRa/JJBW-blockchain/issues"
+  },
+  "homepage": "https://github.com/JJBW-2020-SinNaRa/JJBW-blockchain#readme"
+}
