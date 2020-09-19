@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="0149317d-757b-4393-892c-68d90556af66" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environment.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/environment.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
-    </list>
+    <list default="true" id="0149317d-757b-4393-892c-68d90556af66" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +14,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -111,21 +111,25 @@
       <screen x="-1440" y="-998" width="1440" height="2560" />
     </state>
     <state x="-982" y="36" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1200/-1440.-998.1440.2560@-1440.-998.1440.2560" timestamp="1600501678382" />
-    <state width="1419" height="308" key="GridCell.Tab.0.bottom" timestamp="1600523652589">
+    <state width="1419" height="652" key="GridCell.Tab.0.bottom" timestamp="1600535850402">
       <screen x="-1440" y="-998" width="1440" height="2560" />
     </state>
-    <state width="1419" height="308" key="GridCell.Tab.0.bottom/0.0.1920.1200/-1440.-998.1440.2560@-1440.-998.1440.2560" timestamp="1600523652589" />
-    <state width="1419" height="308" key="GridCell.Tab.0.center" timestamp="1600523652587">
+    <state width="1419" height="652" key="GridCell.Tab.0.bottom/0.0.1920.1200/-1440.-998.1440.2560@-1440.-998.1440.2560" timestamp="1600535850402" />
+    <state width="1419" height="652" key="GridCell.Tab.0.center" timestamp="1600535850393">
       <screen x="-1440" y="-998" width="1440" height="2560" />
     </state>
-    <state width="1419" height="308" key="GridCell.Tab.0.center/0.0.1920.1200/-1440.-998.1440.2560@-1440.-998.1440.2560" timestamp="1600523652587" />
-    <state width="1419" height="308" key="GridCell.Tab.0.left" timestamp="1600523652586">
+    <state width="1419" height="652" key="GridCell.Tab.0.center/0.0.1920.1200/-1440.-998.1440.2560@-1440.-998.1440.2560" timestamp="1600535850393" />
+    <state width="1419" height="652" key="GridCell.Tab.0.left" timestamp="1600535850392">
       <screen x="-1440" y="-998" width="1440" height="2560" />
     </state>
-    <state width="1419" height="308" key="GridCell.Tab.0.left/0.0.1920.1200/-1440.-998.1440.2560@-1440.-998.1440.2560" timestamp="1600523652586" />
-    <state width="1419" height="308" key="GridCell.Tab.0.right" timestamp="1600523652588">
+    <state width="1419" height="652" key="GridCell.Tab.0.left/0.0.1920.1200/-1440.-998.1440.2560@-1440.-998.1440.2560" timestamp="1600535850392" />
+    <state width="1419" height="652" key="GridCell.Tab.0.right" timestamp="1600535850395">
       <screen x="-1440" y="-998" width="1440" height="2560" />
     </state>
-    <state width="1419" height="308" key="GridCell.Tab.0.right/0.0.1920.1200/-1440.-998.1440.2560@-1440.-998.1440.2560" timestamp="1600523652588" />
+    <state width="1419" height="652" key="GridCell.Tab.0.right/0.0.1920.1200/-1440.-998.1440.2560@-1440.-998.1440.2560" timestamp="1600535850395" />
+    <state x="-1057" y="-389" width="672" height="678" key="search.everywhere.popup" timestamp="1600537284167">
+      <screen x="-1440" y="-998" width="1440" height="2560" />
+    </state>
+    <state x="-1057" y="-389" width="672" height="678" key="search.everywhere.popup/0.0.1920.1200/-1440.-998.1440.2560@-1440.-998.1440.2560" timestamp="1600537284167" />
   </component>
 </project>
