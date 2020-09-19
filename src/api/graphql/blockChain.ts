@@ -7,13 +7,42 @@ const typeDefs = gql`
         location: String!,
         trashKind: String!
     }
+    
+    type TransactionResult {
+        blockHash: String,
+        blockNumber: String,
+        contractAddress: String,
+        from: String,
+        gas: String,
+        gasPrice: String,
+        gasUsed: String,
+        input: String,
+        logs: [String],
+        logsBloom: String,
+        nonce: String,
+        senderTxHash: String
+        signatures: [Signatures],
+        status:String,
+        to: String,
+        transactionHash: String,
+        transactionIndex: String,
+        type: String,
+        typeInt: Int,
+        value: String
+    }
+    
+    type Signatures {
+        V: String,
+        R: String,
+        S: String
+    }
 
     extend type Query {
         getTransaction(transaction : String): String
     }
 
     extend type Mutation {
-        makeTransaction(input: TransactionInput): String,
+        makeTransaction(input: TransactionInput): TransactionResult,
         updateStatus(hash: String, status: String): String,
         updateKlay(hash: String, klay: Int): String
     }
@@ -30,33 +59,39 @@ const resolver: IResolvers = {
   },
   Mutation: {
     makeTransaction: async (_, {input}, {req}) => {
-      const {pubkey} = req.headers;
+      const {pubkey : PublicKey, prikey: PrivateKey} = req.headers;
       
-      if (!pubkey) {
-        throw new Error('No Public Key!')
+      if (!PublicKey || !PrivateKey) {
+        throw new Error('No Public or Private Key!')
       }
       
+      let dep = await caver.wallet.getKeyring(PublicKey);
+      
+      if (!dep) {
+        dep = caver.wallet.newKeyring(PublicKey, PrivateKey)
+      }
+  
       const res: any[] = [];
       Object.keys(input).forEach(value => {
         res.push(caver.utils.asciiToHex(value))
       })
       const [imageSrc, location, trashKind] = res
       
-      const abiCreateInput = Service.methods.createProject(
+      const abiCreateInput = Service.methods.init(
         caver.abi.encodeParameter('bytes32', caver.utils.padRight(imageSrc, 64)),
         caver.abi.encodeParameter('bytes32', caver.utils.padRight(location, 64)),
         caver.abi.encodeParameter('bytes32', caver.utils.padRight(trashKind, 64)),
       ).encodeABI();
       
       const smartContractExecutionTx = new caver.transaction.smartContractExecution({
-        from: "",
+        from: dep.address,
         to: process.env.CONTRACT_ADDRESS,
         input: abiCreateInput,
-        gas: process.env.GAS_LIMIT
+        gas: "0xf4240"
       })
       
       try {
-        await caver.wallet.sign("", smartContractExecutionTx);
+        await caver.wallet.sign(dep.address, smartContractExecutionTx);
         return await caver.rpc.klay.sendRawTransaction(smartContractExecutionTx.getRLPEncoding());
       } catch (e) {
         throw new Error(e)
