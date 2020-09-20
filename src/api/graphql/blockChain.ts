@@ -9,7 +9,7 @@ const typeDefs = gql`
         location: String!,
         trashKind: String!
     }
-    
+
     type TransactionResult {
         blockHash: String,
         blockNumber: String,
@@ -32,7 +32,7 @@ const typeDefs = gql`
         typeInt: Int,
         value: String
     }
-    
+
     type TrashDataResult {
         trashID: Int,
         status: String,
@@ -41,7 +41,7 @@ const typeDefs = gql`
         trashKind: String,
         klay: Int
     }
-    
+
     type Signatures {
         V: String,
         R: String,
@@ -49,7 +49,7 @@ const typeDefs = gql`
     }
 
     extend type Query {
-        getTransaction(id : Int): TrashDataResult
+        getTrash(id: Int): TrashDataResult
     }
 
     extend type Mutation {
@@ -84,7 +84,7 @@ const resolver: IResolvers = {
   },
   Mutation: {
     makeTransaction: async (_, {input}, {req}) => {
-      const {pubkey : PublicKey, prikey: PrivateKey} = req.headers;
+      const {pubkey: PublicKey, prikey: PrivateKey} = req.headers;
       
       if (!PublicKey || !PrivateKey) {
         throw new Error('No Public or Private Key!')
@@ -95,9 +95,9 @@ const resolver: IResolvers = {
       if (!dep) {
         dep = caver.wallet.newKeyring(PublicKey, PrivateKey)
       }
-  
+      
       const res: any[] = [];
-      Object.keys(input).map((value : string | number) => {
+      Object.keys(input).map((value: string | number) => {
         const v = input[value];
         typeof v === "string"
           ? res.push(caver.utils.utf8ToHex(v))
