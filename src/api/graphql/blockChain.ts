@@ -19,7 +19,7 @@ const typeDefs = gql`
         gasPrice: String,
         gasUsed: String,
         input: String,
-        logs: [String],
+        logs: [Logs],
         logsBloom: String,
         nonce: String,
         senderTxHash: String
@@ -40,6 +40,18 @@ const typeDefs = gql`
         location: String,
         trashKind: String,
         klay: Int
+    }
+    
+    type Logs {
+        address: String,
+        topics: [String],
+        data: String,
+        blockNumber: String,
+        transactionHash: String,
+        transactionIndex: String,
+        blockHash: String,
+        logIndex: String,
+        removed: Boolean
     }
 
     type Signatures {
