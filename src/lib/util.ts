@@ -13,16 +13,15 @@ export const utf8toHex = (text: string): string => {
 }
 
 export const encodeAllInput = (input) => {
-  let res = {};
+  let res = [];
   Object
     .keys(input)
     .forEach(key => {
-      res = {
-        ...res,
-        [key]: typeof input[key] === "string"
+      res.push(
+        typeof input[key] === "string"
           ? caver.abi.encodeParameter('bytes32', caver.utils.padRight(utf8toHex(input[key]), 64))
-          : input[key]
-      }
+          : caver.abi.encodeParameter('uint256', input[key])
+      )
     });
   
   return res;
