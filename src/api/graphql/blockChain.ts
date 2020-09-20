@@ -3,6 +3,7 @@ import {caver, Service} from "../../core";
 
 const typeDefs = gql`
     input TransactionInput {
+        trashID: Int!,
         imageSrc: String!,
         location: String!,
         trashKind: String!
@@ -72,12 +73,17 @@ const resolver: IResolvers = {
       }
   
       const res: any[] = [];
-      Object.keys(input).forEach(value => {
-        res.push(caver.utils.asciiToHex(value))
+      Object.keys(input).map((value : string | number) => {
+        const v = input[value];
+        typeof v === "string"
+          ? res.push(caver.utils.asciiToHex(v))
+          : res.push(v)
       })
-      const [imageSrc, location, trashKind] = res
+      console.log(res)
+      const [id, imageSrc, location, trashKind] = res
       
       const abiCreateInput = Service.methods.init(
+        caver.abi.encodeParameter('uint256', id),
         caver.abi.encodeParameter('bytes32', caver.utils.padRight(imageSrc, 64)),
         caver.abi.encodeParameter('bytes32', caver.utils.padRight(location, 64)),
         caver.abi.encodeParameter('bytes32', caver.utils.padRight(trashKind, 64)),
