@@ -66,8 +66,8 @@ const typeDefs = gql`
 
     extend type Mutation {
         makeTransaction(input: TransactionInput): TransactionResult,
-        updateStatus(id: Int, status: String): String,
-        updateKlay(hash: String, klay: Int): String
+        updateStatus(id: Int, status: String): TransactionResult,
+        updateKlay(id: Int, klay: Int): TransactionResult
     }
     #    extend type Subscription {
     #        __: String
