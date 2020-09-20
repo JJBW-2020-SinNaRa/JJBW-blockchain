@@ -3,6 +3,10 @@
     "constant": false,
     "inputs": [
       {
+        "name": "_id",
+        "type": "uint256"
+      },
+      {
         "name": "_imageSrc",
         "type": "bytes32"
       },
@@ -16,14 +20,84 @@
       }
     ],
     "name": "init",
-    "outputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "payable": false,
     "stateMutability": "nonpayable",
     "type": "function"
   },
   {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "name": "trashID",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "name": "imageSrc",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "name": "location",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "name": "trashKind",
+        "type": "bytes32"
+      }
+    ],
+    "name": "onInit",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "name": "trashID",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "name": "status",
+        "type": "bytes32"
+      }
+    ],
+    "name": "onUpdateStatus",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "name": "trashID",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "name": "klay",
+        "type": "uint256"
+      }
+    ],
+    "name": "onUpdateKlay",
+    "type": "event"
+  },
+  {
     "constant": false,
     "inputs": [
+      {
+        "name": "_id",
+        "type": "uint256"
+      },
       {
         "name": "_klay",
         "type": "uint256"
@@ -39,6 +113,10 @@
     "constant": false,
     "inputs": [
       {
+        "name": "_id",
+        "type": "uint256"
+      },
+      {
         "name": "_status",
         "type": "bytes32"
       }
@@ -51,25 +129,36 @@
   },
   {
     "constant": true,
-    "inputs": [],
-    "name": "imageSrc",
-    "outputs": [
+    "inputs": [
       {
-        "name": "",
-        "type": "bytes32"
+        "name": "_id",
+        "type": "uint256"
       }
     ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "klay",
+    "name": "getTrashInfo",
     "outputs": [
       {
-        "name": "",
+        "name": "trashID",
+        "type": "uint256"
+      },
+      {
+        "name": "status",
+        "type": "bytes32"
+      },
+      {
+        "name": "imageSrc",
+        "type": "bytes32"
+      },
+      {
+        "name": "location",
+        "type": "bytes32"
+      },
+      {
+        "name": "trashKind",
+        "type": "bytes32"
+      },
+      {
+        "name": "klay",
         "type": "uint256"
       }
     ],
@@ -79,40 +168,41 @@
   },
   {
     "constant": true,
-    "inputs": [],
-    "name": "location",
-    "outputs": [
+    "inputs": [
       {
         "name": "",
-        "type": "bytes32"
+        "type": "uint256"
       }
     ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "status",
+    "name": "trashes",
     "outputs": [
       {
-        "name": "",
-        "type": "bytes32"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "trashKind",
-    "outputs": [
+        "name": "trashID",
+        "type": "uint256"
+      },
       {
-        "name": "",
+        "name": "status",
         "type": "bytes32"
+      },
+      {
+        "name": "imageSrc",
+        "type": "bytes32"
+      },
+      {
+        "name": "location",
+        "type": "bytes32"
+      },
+      {
+        "name": "trashKind",
+        "type": "bytes32"
+      },
+      {
+        "name": "klay",
+        "type": "uint256"
+      },
+      {
+        "name": "isExist",
+        "type": "bool"
       }
     ],
     "payable": false,
