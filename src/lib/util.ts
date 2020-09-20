@@ -27,3 +27,19 @@ export const encodeAllInput = (input) => {
   
   return res;
 }
+
+export const decodeAllInput = (input) => {
+  let res = {};
+  Object
+    .keys(input)
+    .forEach(key => {
+      res = {
+        ...res,
+        [key]: caver.utils.isValidHash(input[key])
+          ? trim(hexToUtf8(input[key]))
+          : input[key]
+      }
+    });
+  
+  return res;
+}
