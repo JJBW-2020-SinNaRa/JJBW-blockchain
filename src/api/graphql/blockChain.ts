@@ -1,6 +1,6 @@
 import {gql, IResolvers} from "apollo-server-express";
 import {caver, Service} from "../../core";
-import {trim} from "../../lib/util";
+import {decodeAllInput, trim} from "../../lib/util";
 
 const typeDefs = gql`
     input TransactionInput {
@@ -67,16 +67,7 @@ const resolver: IResolvers = {
     getTrash: async (_, {id}) => {
       const TrashID = caver.abi.encodeParameter('uint256', id);
       try {
-        const r = await Service.methods.getTrashInfo(id).call()
-        
-        return {
-          trashID: parseInt(r.trashID),
-          status: trim(caver.utils.hexToUtf8(r.status)),
-          imageSrc: trim(caver.utils.hexToUtf8(r.imageSrc)),
-          location: trim(caver.utils.hexToUtf8(r.location)),
-          trashKind: trim(caver.utils.hexToUtf8(r.trashKind)),
-          klay: parseInt(r.klay)
-        };
+        return decodeAllInput(await Service.methods.getTrashInfo(id).call())
       } catch (e) {
         throw new Error(e)
       }
