@@ -31,6 +31,130 @@
     "type": "function"
   },
   {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_id",
+        "type": "uint256"
+      },
+      {
+        "name": "_klay",
+        "type": "uint256"
+      }
+    ],
+    "name": "updateKlay",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_id",
+        "type": "uint256"
+      },
+      {
+        "name": "_status",
+        "type": "bytes32"
+      }
+    ],
+    "name": "updateStatus",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "trashes",
+    "outputs": [
+      {
+        "name": "trashID",
+        "type": "uint256"
+      },
+      {
+        "name": "status",
+        "type": "bytes32"
+      },
+      {
+        "name": "imageSrc",
+        "type": "bytes32"
+      },
+      {
+        "name": "location",
+        "type": "bytes32"
+      },
+      {
+        "name": "trashKind",
+        "type": "bytes32"
+      },
+      {
+        "name": "klay",
+        "type": "uint256"
+      },
+      {
+        "name": "isExist",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_id",
+        "type": "uint256"
+      }
+    ],
+    "name": "getTrashInfo",
+    "outputs": [
+      {
+        "name": "trashID",
+        "type": "uint256"
+      },
+      {
+        "name": "status",
+        "type": "bytes32"
+      },
+      {
+        "name": "imageSrc",
+        "type": "bytes32"
+      },
+      {
+        "name": "location",
+        "type": "bytes32"
+      },
+      {
+        "name": "trashKind",
+        "type": "bytes32"
+      },
+      {
+        "name": "klay",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
     "anonymous": false,
     "inputs": [
       {
@@ -90,123 +214,5 @@
     ],
     "name": "onUpdateKlay",
     "type": "event"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_id",
-        "type": "uint256"
-      },
-      {
-        "name": "_klay",
-        "type": "uint256"
-      }
-    ],
-    "name": "updateKlay",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_id",
-        "type": "uint256"
-      },
-      {
-        "name": "_status",
-        "type": "bytes32"
-      }
-    ],
-    "name": "updateStatus",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [
-      {
-        "name": "_id",
-        "type": "uint256"
-      }
-    ],
-    "name": "getTrashInfo",
-    "outputs": [
-      {
-        "name": "trashID",
-        "type": "uint256"
-      },
-      {
-        "name": "status",
-        "type": "bytes32"
-      },
-      {
-        "name": "imageSrc",
-        "type": "bytes32"
-      },
-      {
-        "name": "location",
-        "type": "bytes32"
-      },
-      {
-        "name": "trashKind",
-        "type": "bytes32"
-      },
-      {
-        "name": "klay",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "name": "trashes",
-    "outputs": [
-      {
-        "name": "trashID",
-        "type": "uint256"
-      },
-      {
-        "name": "status",
-        "type": "bytes32"
-      },
-      {
-        "name": "imageSrc",
-        "type": "bytes32"
-      },
-      {
-        "name": "location",
-        "type": "bytes32"
-      },
-      {
-        "name": "trashKind",
-        "type": "bytes32"
-      },
-      {
-        "name": "klay",
-        "type": "uint256"
-      },
-      {
-        "name": "isExist",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
   }
 ]

@@ -2,6 +2,10 @@
 pragma solidity >=0.4.24 <=0.5.6;
 
 contract JJBW_SINALEE {
+    constructor() public {
+
+    }
+
     struct Trashes {
         uint256 trashID;
         bytes32 status;
