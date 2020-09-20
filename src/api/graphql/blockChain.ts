@@ -76,7 +76,7 @@ const resolver: IResolvers = {
       Object.keys(input).map((value : string | number) => {
         const v = input[value];
         typeof v === "string"
-          ? res.push(caver.utils.asciiToHex(v))
+          ? res.push(caver.utils.utf8ToHex(v))
           : res.push(v)
       })
       console.log(res)
