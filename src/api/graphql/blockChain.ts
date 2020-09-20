@@ -1,6 +1,6 @@
 import {gql, IResolvers} from "apollo-server-express";
 import {caver, Service} from "../../core";
-import {decodeAllInput, trim} from "../../lib/util";
+import {decodeAllInput, encodeAllInput, trim} from "../../lib/util";
 
 const typeDefs = gql`
     input TransactionInput {
@@ -87,22 +87,7 @@ const resolver: IResolvers = {
         dep = caver.wallet.newKeyring(PublicKey, PrivateKey)
       }
       
-      const res: any[] = [];
-      Object.keys(input).map((value: string | number) => {
-        const v = input[value];
-        typeof v === "string"
-          ? res.push(caver.utils.utf8ToHex(v))
-          : res.push(v)
-      })
-      console.log(res)
-      const [id, imageSrc, location, trashKind] = res
-      
-      const abiCreateInput = Service.methods.init(
-        caver.abi.encodeParameter('uint256', id),
-        caver.abi.encodeParameter('bytes32', caver.utils.padRight(imageSrc, 64)),
-        caver.abi.encodeParameter('bytes32', caver.utils.padRight(location, 64)),
-        caver.abi.encodeParameter('bytes32', caver.utils.padRight(trashKind, 64)),
-      ).encodeABI();
+      const abiCreateInput = Service.methods.init(...encodeAllInput(input)).encodeABI();
       
       const smartContractExecutionTx = new caver.transaction.smartContractExecution({
         from: dep.address,
