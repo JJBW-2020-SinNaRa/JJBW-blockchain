@@ -136,10 +136,39 @@ const resolver: IResolvers = {
         throw new Error(e)
       }
     },
-    updateKlay: (_, {hash, klay}) => {
-      console.debug(hash, klay);
+    updateKlay: async (_, {id, klay}) => {
+      const {pubkey: PublicKey, prikey: PrivateKey} = req.headers;
       
-      return "update klay";
+      if (!PublicKey || !PrivateKey) {
+        throw new Error('No Public or Private Key!')
+      }
+      
+      let dep = await caver.wallet.getKeyring(PublicKey);
+      
+      if (!dep) {
+        dep = caver.wallet.newKeyring(PublicKey, PrivateKey)
+      }
+      
+      const abiCreateInput = Service
+        .methods
+        .updateStatus(
+          id,
+          klay
+        ).encodeABI();
+      
+      const smartContractExecutionTx = new caver.transaction.smartContractExecution({
+        from: dep.address,
+        to: process.env.CONTRACT_ADDRESS,
+        input: abiCreateInput,
+        gas: process.env.GAS_LIMIT
+      })
+      
+      try {
+        await caver.wallet.sign(dep.address, smartContractExecutionTx);
+        return await caver.rpc.klay.sendRawTransaction(smartContractExecutionTx.getRLPEncoding());
+      } catch (e) {
+        throw new Error(e)
+      }
     },
   },
   // Subscription: {
