@@ -68,6 +68,7 @@ contract JJBW_SINALEE {
     isIDisUnique(_id)
     returns (bool) {
         trashes[_id].trashID = _id;
+        trashes[_id].status = "PENDING";
         trashes[_id].imageSrc = _imageSrc;
         trashes[_id].location = _location;
         trashes[_id].trashKind = _trashKind;
@@ -110,12 +111,12 @@ contract JJBW_SINALEE {
         uint256 klay
     ) {
         return ((
-            trashes[_id].trashID,
-            trashes[_id].status,
-            trashes[_id].imageSrc,
-            trashes[_id].location,
-            trashes[_id].trashKind,
-            trashes[_id].klay
+        trashes[_id].trashID,
+        trashes[_id].status,
+        trashes[_id].imageSrc,
+        trashes[_id].location,
+        trashes[_id].trashKind,
+        trashes[_id].klay
         ));
     }
 }
