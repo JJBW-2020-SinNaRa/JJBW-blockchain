@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0149317d-757b-4393-892c-68d90556af66" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/graphql/blockChain.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/graphql/blockChain.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ABI.json" beforeDir="false" afterPath="$PROJECT_DIR$/ABI.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/contracts/JJBW_SINNALEE.sol" beforeDir="false" afterPath="$PROJECT_DIR$/src/contracts/JJBW_SINNALEE.sol" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -105,7 +104,7 @@
       <option name="presentableId" value="Default" />
       <updated>1600498256340</updated>
       <workItem from="1600498257455" duration="2754000" />
-      <workItem from="1600565932026" duration="6416000" />
+      <workItem from="1600565932026" duration="6578000" />
     </task>
     <servers />
   </component>
