@@ -1,5 +1,6 @@
 import {gql, IResolvers} from "apollo-server-express";
 import {caver, Service} from "../../core";
+import {trim} from "../../lib/util";
 
 const typeDefs = gql`
     input TransactionInput {
@@ -32,6 +33,15 @@ const typeDefs = gql`
         value: String
     }
     
+    type TrashDataResult {
+        trashID: Int,
+        status: String,
+        imageSrc: String,
+        location: String,
+        trashKind: String,
+        klay: Int
+    }
+    
     type Signatures {
         V: String,
         R: String,
@@ -39,7 +49,7 @@ const typeDefs = gql`
     }
 
     extend type Query {
-        getTransaction(transaction : String): String
+        getTransaction(id : Int): TrashDataResult
     }
 
     extend type Mutation {
@@ -54,8 +64,22 @@ const typeDefs = gql`
 
 const resolver: IResolvers = {
   Query: {
-    getTransaction: (_, {transaction}) => {
-      return caver.transaction.decode(transaction)
+    getTrash: async (_, {id}) => {
+      const TrashID = caver.abi.encodeParameter('uint256', id);
+      try {
+        const r = await Service.methods.getTrashInfo(id).call()
+        
+        return {
+          trashID: parseInt(r.trashID),
+          status: trim(caver.utils.hexToUtf8(r.status)),
+          imageSrc: trim(caver.utils.hexToUtf8(r.imageSrc)),
+          location: trim(caver.utils.hexToUtf8(r.location)),
+          trashKind: trim(caver.utils.hexToUtf8(r.trashKind)),
+          klay: parseInt(r.klay)
+        };
+      } catch (e) {
+        throw new Error(e)
+      }
     }
   },
   Mutation: {
